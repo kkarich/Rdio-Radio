@@ -1,0 +1,30 @@
+<div flex class="container" data-ng-controller="HeaderController" layout="row" layout-align="space-around center">
+			<span >
+				<a href="/#!/" class="navbar-brand">Home</a>
+			</span>
+			<span flex></span>
+
+
+			<md-select ng-model = "favorites" data-ng-if="menu.shouldRender(authentication.user);">
+		
+			
+			
+
+	  		<span data-ng-hide="authentication.user"> 
+			<a href="/#!/signup">Sign Up</a>
+			|
+			<a href="/#!/signin">Sign In</a>
+	  		</span>
+
+	  		<md-select ng-model = "userdropdown" data-ng-show="authentication.user">
+	  		 <md-select-label  data-ng-bind="authentication.user.displayName">test</md-select-label>
+		    	<md-option ng-value="opt"><a href="/#!/settings/profile">Edit Profile</a></md-option>
+		    	<md-option ng-value="opt"><a href="/#!/settings/password">Change Password</a></md-option>
+				<md-option ng-value="opt"><a href="/auth/signout">Signout</a></md-option>
+		    	
+	  		</md-select>
+
+
+
+
+</div >

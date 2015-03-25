@@ -1,0 +1,24 @@
+<section data-ng-controller="SearchResultsController">
+	<h1><i class="fa fa-search"></i>Showing results for {{searchText}}</h1>
+	{{artists}}
+  <h2>Artists</h2>
+      <div class = "artist-row" ng-class="{hovering: hover}" 
+    ng-mouseenter="hover = true"
+    ng-mouseleave="hover = false">
+        <md-item ng-repeat="item in artists" >
+          <artist-card item="item"></artist-card>	
+	
+      </md-item>
+    </div>
+
+ <h2>Albums</h2>
+
+ <div class = "album-row">
+        <md-item ng-repeat="item in albums" >
+            <album-card item="item"></album-card>
+      </md-item>
+  </div>
+
+<track-list tracks="tracks"></track-list> 
+
+</section>

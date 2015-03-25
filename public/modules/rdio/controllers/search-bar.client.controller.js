@@ -1,0 +1,22 @@
+'use strict';
+
+angular.module('rdio').controller('SearchBarController', ['$scope', '$http' ,'$q',
+	function($scope,$http, $q) {
+
+  $scope.query = function(searchText) {
+
+       var deferred = $q.defer();
+      
+       $http.get('/rdio/search/'+searchText )
+        .success(function(data, status, headers, config) {
+           deferred.resolve( data.data );
+          }).
+          error(function(data, status, headers, config) {
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
+          });
+      return deferred.promise
+  }
+
+}
+]);
