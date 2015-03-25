@@ -6,11 +6,11 @@ angular.module('rdio').config(['$stateProvider',
 		// Rdio state routing
 		$stateProvider.
 		state('view-album', {
-			url: '/view-album',
+			url: '/view-album/:id',
 			templateUrl: 'modules/rdio/views/view-album.client.view.html'
 		}).
 		state('view-artist', {
-			url: '/view-artist',
+			url: '/view-artist/:id',
 			controller: 'SearchResultsController',
 			templateUrl: 'modules/rdio/views/view-artist.client.view.html'
 		}).

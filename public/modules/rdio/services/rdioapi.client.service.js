@@ -9,7 +9,20 @@ angular.module('rdio').factory('Rdioapi', [ '$http',
 		return {
 			search: function(searchText) {
 				return $http.get('/rdio/search/'+ searchText );
+			},
+			getAlbumsByArtist: function(id) {
+				return $http.get('/rdio/albumsByArtist/'+ id );
+			},
+			getTracksByArtist: function(id) {
+				return $http.get('/rdio/tracksByArtist/'+ id );
+			},
+			getAlbumById: function(id) {
+				return $http.get('/rdio/albumById/'+ id );
+			},
+			getTrackById: function(id) {
+				return $http.get('/rdio/trackById/'+ id );
 			}
+
 		};
 	}
 ]);

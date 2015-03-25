@@ -1,0 +1,223 @@
+md-card{
+	width: 100px;
+	display: inline-block!important;
+  position: relative;
+}
+body a{
+	color:black;
+}
+.album-title,.album-artist,.artist-title{
+	white-space: nowrap;
+width: 100%;
+overflow: hidden;
+text-overflow: ellipsis;
+
+}
+
+
+#main-view{
+	padding-right:65px;
+	
+}
+
+
+#main-view .album-artist{
+	
+	font-size:80%;
+}
+
+#player-controller{
+	padding-top: 25px;
+   	margin-left: auto;
+    margin-right: auto;
+    width:80%;
+}
+
+#previous,#play,#pause,#next{
+	padding:10px;
+}
+
+#previous{
+	margin-left: auto;
+	
+}
+
+#play, #pause{
+	margin-left: auto;
+	margin-right: auto;
+	
+}
+
+#next{
+	
+	margin-right: auto;
+	
+}
+
+
+.artist {
+  
+  border: 1px solid #ddd;
+  width: 100%;
+
+}
+#artist {
+  
+  margin:0px;
+
+}
+#track {
+   margin:0px;
+
+}
+
+  .album {
+  
+  border: 1px solid #ddd;
+  width: 100%; }
+
+
+
+  md-content.main-content {
+  height:100vh;
+  background-color: #e0e0e0;
+  background: url(http://subtlepatterns.com/patterns/skulls.png);
+
+  
+}
+
+#search-button{
+
+	position:fixed;
+	top:5vh;
+	right:5vw;
+
+}
+
+#button-search{
+
+	position:absolute;
+	top:40px;
+	right:25px;
+
+}
+
+.album-row .card-container { 
+	width: 180px;
+	display:inline-block; 
+}
+
+.artist-row .card-container { 
+	width: 180px;
+	display:inline-block; 
+}
+
+.album-row,.artist-row{
+	overflow-x: hidden;
+    overflow-y: hidden;
+    height: 220px;
+    white-space:nowrap
+}
+
+.album-row:hover,.artist-row:hover{
+	overflow-x: scroll;
+    
+}
+
+.track-row {
+	padding-left: 8px;
+	padding-top: 10px;
+}
+
+.clickable{
+	cursor: pointer
+
+}
+
+.track-header {
+	padding-left: 8px;
+	
+}
+
+.track-row:hover + md-divider{
+	
+	background-color:#673AB7;
+	
+}
+.card-container{
+  position:relative;
+}
+.card-container .card-hover {
+  background: rgba(0, 0, 0, 0.5);
+  position:absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+
+
+}
+
+.card-container .card-hover:hover {
+  opacity: 1;
+}
+
+.card-container .card-hover-content {
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  font-size: 20px;
+  text-align: center;
+  top: 50%;
+  margin-top: -16px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: white;
+}
+
+.card-hover-content .fa-play:hover{
+	color:#B388FF;
+}
+
+.card-container .card-hover-content a{
+ 
+  color: white;
+}
+
+
+ a.email-link{
+	color:#673AB7;
+}
+
+/* image */
+.card-container {
+    
+    height: 180px;
+    
+    overflow: hidden;
+    
+    cursor:pointer;
+}
+
+/* zoom in image */
+
+.card-container img {
+  
+  width: 180px;
+ 
+  -webkit-transition: all 1s ease;
+     -moz-transition: all 1s ease;
+       -o-transition: all 1s ease;
+      -ms-transition: all 1s ease;
+          transition: all 1s ease;
+}
+ 
+.card-container .card-hover:hover +.img-container img {
+  width: 250px;
+  
+}
+
+.track-row .fa-play{
+	color:#673AB7;
+}
+
+;

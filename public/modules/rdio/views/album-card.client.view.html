@@ -1,0 +1,16 @@
+
+<div ng-click="playAlbum(item.id)" class = "card-container">
+ <div class="card-hover">
+                            <div class="card-hover-content">
+                                <i class="fa fa-play fa-2x clickable"></i>
+                                  <div layout="column">
+   <a class = "album-title" ui-sref="view-album({ id: item.id })"> {{item.name}} </a>
+   <a class = "album-artist" ui-sref="view-artist({ id: item.artist_id })">By: {{item.artist}}</a>
+</div>
+                            </div>
+
+                        </div>
+                        <div class = "img-container">
+  <img  ng-src="{{item.icon}}" ng-class="item.type" >
+</div>
+ 	</div>

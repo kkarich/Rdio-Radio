@@ -1,0 +1,48 @@
+<div class = "track-header" layout="row">
+
+	<div flex="5">
+   <h3> #</h3> 
+  </div>
+  <div flex="35">
+   <h3> Song</h3>
+  </div>
+  <div flex="20">
+    <h3>Artist</h3>
+  </div>
+  <div flex = "35">
+    <h3>Album</h3>
+  </div>
+
+  <div flex>
+    <i class="fa fa-clock-o fa-2x"></i>
+  </div>
+</div>
+
+     
+        <md-item ng-repeat="item in tracks" ng-mouseover="hoverIn()" ng-mouseleave = "hoverOut()">
+    
+          <div class = "track-row" layout="row" >
+   <div  flex="5">
+  	<p ng-hide="hovered">  {{$index + 1}} </p>
+    <p class = "clickable" ng-click = "playTrack(item.id)" ng-show="hovered">  <i class="fa fa-play"></i> </p>
+  </div>
+  <div flex="35">
+  	<p class = "clickable" ng-click = "playTrack(item.id)"> {{item.name}} </p>
+  </div>
+  <div  flex="20">
+    <a ui-sref="viewArtist({ artistId: item.artist_id })"> <p>{{item.artist}} </p></a> 
+  </div>
+  <div  flex = "35">
+   <a ui-sref="viewAlbum({ albumId: item.albumKey })"> <p>{{item.album}}</p></a> 
+  </div>
+
+  <div  flex>
+    <p>{{item.duration * 1000 | date:'m:ss'}}</p>
+  </div>
+
+
+ 
+
+</div>
+<md-divider ng-if="!$last"></md-divider>
+      </md-item>

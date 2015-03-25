@@ -3,14 +3,20 @@
 angular.module('rdio').directive('trackList', [
 	function() {
 		return {
-			template: '<div></div>',
+			templateUrl: 'modules/rdio/views/track-list.client.view.html',
 			restrict: 'E',
-			link: function postLink(scope, element, attrs) {
-				// Track list directive logic
-				// ...
+           controller: function ($scope,$rootScope) {
+           $scope.playTrack = function (trackId) {
+                $rootScope.$broadcast('updateCurrentSong',trackId);
+              };
+              $scope.hoverIn = function () {
+               this.hovered = true
+              };
+              $scope.hoverOut = function () {
+                this.hovered = false
+              };
 
-				element.text('this is the trackList directive');
-			}
+          }
 		};
 	}
 ]);

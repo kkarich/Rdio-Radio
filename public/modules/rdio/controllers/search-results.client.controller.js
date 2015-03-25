@@ -13,11 +13,55 @@ angular.module('rdio').controller('SearchResultsController', ['$scope', '$stateP
            	$scope.artists = $filter('filter')(items, { type: "artist" });
       		$scope.albums = $filter('filter')(items, { type: "album" });
       		$scope.tracks = $filter('filter')(items, { type: "track" });
+
+      		
+
+      for (var i = 0; i < $scope.artists.length; i++) { 
+          Rdioapi.getAlbumsByArtist($scope.artists[i].id)
+           .success(function(data) {
+            var index = $scope.artists.indexOf($filter('filter')($scope.artists, { id: data.data[0].artist_id })[0]);
+            $scope.artists[index].icon = data.data[0].icon
+            console.log(data.data.artist_id,data.data[0].icon)
+            
+      })
+      .error(function(data) {
+        console.log('Error: ' + data)
+        
+      });
+      }
+      
+      for (i = 0; i < $scope.albums.length; i++) { 
+          Rdioapi.getAlbumById($scope.albums[i].id)
+           .success(function(data) {
+            var index = $scope.albums.indexOf($filter('filter')($scope.albums, { id: data.data.id })[0]);
+            $scope.albums[index] = data.data
+            
+      })
+      .error(function(data) {
+        console.log('Error: ' + data)
+        
+      });
+      }
+     
+      for (i = 0; i < $scope.tracks.length; i++) { 
+          Rdioapi.getTrackById($scope.tracks[i].id)
+           .success(function(data) {
+            var index = $scope.tracks.indexOf($filter('filter')($scope.tracks, { id: data.data.id })[0]);
+            $scope.tracks[index] = data.data
+            
+      })
+      .error(function(data) {
+        console.log('Error: ' + data)
+        
+      });
+      }
+
           }).
           error(function(data, status, headers, config) {
             // called asynchronously if an error occurs
             // or server returns response with an error status.
           });
+
 
 	}
 ]);
