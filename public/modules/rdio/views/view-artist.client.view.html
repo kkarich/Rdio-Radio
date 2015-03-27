@@ -1,3 +1,14 @@
 <section data-ng-controller="ViewArtistController">
-	{{id}}
+	<h1>{{artistName}}</h1>
+ <h2 >Albums</h2>
+ <div class = "album-row" >
+        <md-item ng-repeat="item in albums" >   
+    
+     <album-card item="item"></album-card>
+
+      </md-item>
+    </div>
+
+
+<track-list tracks="tracks"></track-list>
 </section>

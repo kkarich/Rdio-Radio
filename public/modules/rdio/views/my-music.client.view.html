@@ -1,3 +1,14 @@
 <section data-ng-controller="MyMusicController">
-	This is the My music view
+	
+   	<h1>My Music</h1>
+         <h2>Albums</h2>
+
+ <div class = "album-row ">
+       
+            <album-card item="item" ng-repeat="item in albums"></album-card>
+
+     
+  </div>
+
+<track-list tracks="tracks"></track-list> 
 </section>

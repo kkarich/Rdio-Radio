@@ -78,8 +78,8 @@ text-overflow: ellipsis;
 
 
 
-  md-content.main-content {
-  height:100vh;
+  md-content.dashboard-content {
+
   background-color: #e0e0e0;
   background: url(http://subtlepatterns.com/patterns/skulls.png);
 

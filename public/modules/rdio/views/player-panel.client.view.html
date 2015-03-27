@@ -1,9 +1,29 @@
 
       <md-content class="md-padding" ng-controller="PlayerPanelController">
 
-        <p hide-md show-gt-md>
-          This sidenav is locked open on your device. To go back to the default behavior,
-          narrow your display.
-        </p>
+     
+     
+      <div id = "api" ></div>
+      <img id="art" src=""  width="100%" >
+
+ 
+      
+   <center>
+     <h3 id="track"></h3>
+   <span id="artist"></span>
+  </center>
+  <div>
+        <md-progress-linear class="md-primary" md-mode="determinate" value="{{trackProgress}}"></md-progress-linear>
+      </div>
+      <div layout = "row" layout-align="center center" id = "player-controller">
+      <span  id="previous" class = "clickable"><i class="fa fa-step-backward fa-2x"></i></span>
+      <span  id="play" class = "clickable" ><i class="fa fa-play fa-2x"></i></span>
+      <span  id="pause" class = "clickable"><i class="fa fa-pause fa-2x"></i></span>
+      <span  id="next"class = "clickable"><i class="fa fa-step-forward fa-2x"></i></span>
+    </div>
+    <center>
+    <h5>Thanks for listening! </br>Please let me know what you think!</h5>
+    <p><a href = "mailto:keenanmkarich@gmail.com" class = "email-link">keenanmkarich@gmail.com</a></p>
+  </center>
       </md-content>
    

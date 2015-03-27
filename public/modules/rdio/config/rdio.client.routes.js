@@ -19,7 +19,7 @@ angular.module('rdio').config(['$stateProvider',
 			templateUrl: 'modules/rdio/views/search-results.client.view.html'
 		}).
 		state('my-music', {
-			url: '/my-music',
+			url: '/',
 			templateUrl: 'modules/rdio/views/my-music.client.view.html'
 		});
 	}
