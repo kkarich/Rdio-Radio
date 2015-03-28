@@ -15,16 +15,7 @@ text-overflow: ellipsis;
 }
 
 
-#main-view{
-	padding-right:65px;
-	
-}
 
-
-#main-view .album-artist{
-	
-	font-size:80%;
-}
 
 #player-controller{
 	padding-top: 25px;

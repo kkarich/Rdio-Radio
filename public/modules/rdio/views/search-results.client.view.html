@@ -1,4 +1,20 @@
 <section data-ng-controller="SearchResultsController">
+  <div ng-show = "loading" layout = "column" layout-align="center center">
+  
+      <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+
+        
+        <h2>
+          {{loadingMessage.text}}
+        </h2>
+        <h3>
+          - {{loadingMessage.by}}
+        </h3>
+    
+
+    </div>
+
+  <div ng-hide = "loading">
 	<h1><i class="fa fa-search"></i>Showing results for {{searchText}}</h1>
   <h2>Artists</h2>
       <div class = "artist-row" ng-class="{hovering: hover}" 
@@ -19,5 +35,5 @@
   </div>
 
 <track-list tracks="tracks"></track-list> 
-
+</div>
 </section>

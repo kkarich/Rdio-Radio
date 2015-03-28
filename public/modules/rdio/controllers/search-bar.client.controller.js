@@ -1,7 +1,11 @@
 'use strict';
 
-angular.module('rdio').controller('SearchBarController', ['$scope', '$http' ,'$q',
-	function($scope,$http, $q) {
+angular.module('rdio').controller('SearchBarController', ['$scope', '$http' ,'$q', '$location',
+	function($scope,$http, $q,$location) {
+
+  $scope.search = function(search){
+            $location.path('/search-results/' + search);
+        };
 
   $scope.query = function(searchText) {
 
@@ -9,7 +13,7 @@ angular.module('rdio').controller('SearchBarController', ['$scope', '$http' ,'$q
       
        $http.get('/rdio/search/'+searchText )
         .success(function(data, status, headers, config) {
-           deferred.resolve( data.data );
+           
           }).
           error(function(data, status, headers, config) {
             // called asynchronously if an error occurs

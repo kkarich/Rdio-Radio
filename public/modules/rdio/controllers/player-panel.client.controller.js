@@ -17,7 +17,6 @@ angular.module('rdio').controller('PlayerPanelController', ['$scope', '$interval
           if(timeElapsed && playing){
           $scope.trackProgress += 100* deltaPosition/timeElapsed;
 
-          //console.log(100* deltaPosition/timeElapsed)
         }
           
         }, 100, 0, true);
@@ -36,9 +35,6 @@ angular.module('rdio').controller('PlayerPanelController', ['$scope', '$interval
           });
 
         $('#api').bind('playingTrackChanged.rdio', function(e, playingTrack, sourcePosition) {
-            console.log("test")
-           console.log("playing")
-           console.log(duration)
               duration = playingTrack.duration;
               
               $('#art').attr('src', playingTrack.icon);

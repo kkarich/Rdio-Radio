@@ -49,28 +49,25 @@
       		<header data-ng-include="'/modules/core/views/header.client.view.html'" class="md-toolbar-tools navbar navbar-fixed"></header>
 
     	</md-toolbar>
-
-    	<div class = "search-bar" data-ng-controller="SearchBarController">
-
-  	
-
-
-<md-autocomplete flex
-     
-        md-selected-item="selectedItem"
-        md-search-text="searchText"
-        md-items="item in query(searchText)"
-        md-item-text="item.name"
-        
-      
-        placeholder="Search Music">
-      <span md-highlight-text="searchText">{{item.name}}</span>
-    </md-autocomplete>
+<div class = "search-bar" data-ng-controller="SearchBarController">
+	<form ng-submit="search(searchText)">
+		<md-autocomplete flex
+	     
+	        md-selected-item="selectedItem"
+	        md-search-text="searchText"
+	        md-items="item in items"
+	        md-item-text="item.name"
+	        
+	      
+	        placeholder="Search Music">
+	      <span md-highlight-text="searchText">{{item.name}}</span>
+	    </md-autocomplete>
+    <form>
 </div>
     	
 
 <div layout = "row">
-    	<md-sidenav data-ng-include="'/modules/rdio/views/player-panel.client.view.html'" flex class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+    	<md-sidenav data-ng-include="'/modules/rdio/views/player-panel.client.view.html'" flex class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="true">
     	</md-sidenav>
 
     	<md-content md-scroll-y flex class = "md-padding dashboard-content">

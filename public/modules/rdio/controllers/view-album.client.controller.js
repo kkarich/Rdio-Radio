@@ -9,6 +9,7 @@ angular.module('rdio').controller('ViewAlbumController', ['$scope', '$stateParam
   Rdioapi.getAlbumById(albumId)
    .success(function(data) {
         var album = data.data;
+        
 
         $scope.album = album
         $scope.tracks = album.track_ids;
