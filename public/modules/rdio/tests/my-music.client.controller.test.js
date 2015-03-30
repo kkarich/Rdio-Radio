@@ -44,15 +44,17 @@
 			$httpBackend = _$httpBackend_;
 			$location = _$location_;
 
+			
+
 			// Initialize the My music controller.
 			MyMusicController = $controller('MyMusicController', {
 				$scope: scope
 			});
 		}));
 
-		it('Should do some controller test', inject(function() {
-			// The test logic
-			// ...
-		}));
+		
+
+	
+		
 	});
 }());

@@ -37,9 +37,9 @@ angular.module('rdio').controller('SearchResultsController', ['$scope', '$stateP
         .success(function(data, status, headers, config) {
      		$scope.loading = false;
      		
-           	var items = data.data;
+        var items = data.data;
 
-           	$scope.artists = $filter('filter')(items, { type: "artist" });
+          $scope.artists = $filter('filter')(items, { type: "artist" });
       		$scope.albums = $filter('filter')(items, { type: "album" });
       		$scope.tracks = $filter('filter')(items, { type: "track" });
 

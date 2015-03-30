@@ -44,15 +44,31 @@
 			$httpBackend = _$httpBackend_;
 			$location = _$location_;
 
+			$httpBackend.when('GET', '/rdio/albumsByArtist/r330802')
+                            .respond({"data":[{"object_type":"album","id":"a243122","duration":2935,"type":"album","price":"None","icon":"http://rdio3img-a.akamaihd.net/album/2/b/5/000000000003b5b2/square-200.jpg","name":"The Burning Hour","artist":"Test Your Reflex","url":"/artist/Test_Your_Reflex/album/The_Burning_Hour/","artist_id":"r330802","length":22,"track_ids":["t2957501","t2957600","t2957674","t2957759","t2957839","t2957932","t2958002","t2958105","t2958210","t2958295","t2958397","t2958497"]},{"object_type":"album","id":"a260997","duration":226,"type":"album","price":"None","icon":"http://rdio3img-a.akamaihd.net/album/5/8/b/000000000003fb85/square-200.jpg","name":"Pieces Of The Sun","artist":"Test Your Reflex","url":"/artist/Test_Your_Reflex/album/Pieces_Of_The_Sun/","artist_id":"r330802","length":22,"track_ids":["t3202956"]}]});
+		     $httpBackend.when('GET', '/rdio/tracksByArtist/r330802')
+		                            .respond({"data":[{"object_type":"track","id":"t2957674","duration":217,"album":"The Burning Hour","type":"track","price":"None","album_artist_key":"r330802","radio_id":"sr2957674","icon":"http://rdio3img-a.akamaihd.net/album/2/b/5/000000000003b5b2/square-200.jpg","name":"Thinking Of You","artist":"Test Your Reflex","url":"/artist/Test_Your_Reflex/album/The_Burning_Hour/track/Thinking_Of_You/","icon400":"http://rdio1img-a.akamaihd.net/album/2/b/5/000000000003b5b2/square-400.jpg","artist_id":"r330802","length":31,"albumKey":"a243122"}]});
+
+
 			// Initialize the View artist controller.
 			ViewArtistController = $controller('ViewArtistController', {
-				$scope: scope
+				$scope: scope,
+				$stateParams:{id: 'r330802'}
 			});
 		}));
 
-		it('Should do some controller test', inject(function() {
-			// The test logic
-			// ...
+		it('should get albums and tracks for artist', inject(function() {
+			$httpBackend.expectGET('/rdio/albumsByArtist/r330802');
+        	$httpBackend.expectGET('/rdio/tracksByArtist/r330802');
+        	$httpBackend.flush();
+		}));
+
+		it('should get artist name', inject(function() {
+			$httpBackend.expectGET('/rdio/albumsByArtist/r330802');
+        	$httpBackend.expectGET('/rdio/tracksByArtist/r330802');
+        	$httpBackend.flush();
+      
+       		expect(scope.artistName).toEqual('Test Your Reflex');
 		}));
 	});
 }());

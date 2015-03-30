@@ -18,8 +18,11 @@
   </div>
 </div>
 
+    <md-item ng-hide="tracks.length" >
+          No tracks found
+        </md-item>
      
-        <md-item ng-repeat="item in tracks" ng-mouseover="hoverIn()" ng-mouseleave = "hoverOut()">
+    <md-item ng-repeat="item in tracks" ng-mouseover="hoverIn()" ng-mouseleave = "hoverOut()">
     
           <div class = "track-row" layout="row" >
    <div  flex="5">
@@ -30,10 +33,10 @@
   	<p class = "clickable" ng-click = "playTrack(item.id)"> {{item.name}} </p>
   </div>
   <div  flex="20">
-    <a ui-sref="viewArtist({ artistId: item.artist_id })"> <p>{{item.artist}} </p></a> 
+    <a ui-sref="view-artist({ id: item.artist_id })"> <p class = "clickable">{{item.artist}} </p></a> 
   </div>
   <div  flex = "35">
-   <a ui-sref="viewAlbum({ albumId: item.albumKey })"> <p>{{item.album}}</p></a> 
+   <a ui-sref="view-album({ id: item.albumKey })"> <p class = "clickable" >{{item.album}}</p></a> 
   </div>
 
   <div  flex>

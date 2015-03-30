@@ -44,15 +44,36 @@
 			$httpBackend = _$httpBackend_;
 			$location = _$location_;
 
+			$httpBackend.when('GET', '/rdio/albumById/a243122')
+                            .respond({"data":{"object_type":"album","id":"a243122","duration":2935,"type":"album","price":"None","icon":"http://rdio3img-a.akamaihd.net/album/2/b/5/000000000003b5b2/square-200.jpg","name":"The Burning Hour","artist":"Test Your Reflex","url":"/artist/Test_Your_Reflex/album/The_Burning_Hour/","artist_id":"r330802","length":12,"track_ids":["t2957501"]}});
+ 
+     		$httpBackend.when('GET', '/rdio/trackById/t2957501')
+                            .respond({"data":{"object_type":"track","id":"t2957501","duration":309,"album":"The Burning Hour","type":"track","price":"None","album_artist_key":"r330802","radio_id":"sr2957501","icon":"http://rdio3img-a.akamaihd.net/album/2/b/5/000000000003b5b2/square-200.jpg","name":"I'm Not Sorry","artist":"Test Your Reflex","url":"/artist/Test_Your_Reflex/album/The_Burning_Hour/track/I%27m_Not_Sorry/","icon400":"http://rdio1img-a.akamaihd.net/album/2/b/5/000000000003b5b2/square-400.jpg","artist_id":"r330802","length":1,"albumKey":"a243122"}});
+ 
+
 			// Initialize the View album controller.
 			ViewAlbumController = $controller('ViewAlbumController', {
-				$scope: scope
+				$scope: scope,
+				$stateParams:{id : 'a243122'}
 			});
 		}));
 
-		it('Should do some controller test', inject(function() {
-			// The test logic
-			// ...
+		it('Should get album info', inject(function() {
+			$httpBackend.expectGET('/rdio/albumById/a243122');
+	        $httpBackend.flush();
+	        expect(scope.album.name).toEqual('The Burning Hour');
+
+        
+		}));
+
+		it('Should get tracks info', inject(function() {
+			$httpBackend.expectGET('/rdio/trackById/t2957501');
+	        $httpBackend.flush();
+	        expect(scope.tracks[0].name).toEqual('I\'m Not Sorry');
+       
+      
+
+        
 		}));
 	});
 }());

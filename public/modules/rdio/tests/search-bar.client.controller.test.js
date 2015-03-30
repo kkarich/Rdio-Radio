@@ -50,9 +50,10 @@
 			});
 		}));
 
-		it('Should do some controller test', inject(function() {
-			// The test logic
-			// ...
+		it('$scope.search should redirect user to search results', inject(function() {
+			scope.search('test');
+			expect($location.url()).toEqual('/search-results/test');
+
 		}));
 	});
 }());
