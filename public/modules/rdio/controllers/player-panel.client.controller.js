@@ -71,9 +71,9 @@ angular.module('rdio').controller('PlayerPanelController', ['$scope', '$interval
           });
           
           //local host
-          $('#api').rdio('GAlNi78J_____zlyYWs5ZG02N2pkaHlhcWsyOWJtYjkyN2xvY2FsaG9zdEbwl7EHvbylWSWFWYMZwfc=');
-          // this is a valid playback token for www.keenankarich.com.
-          //$('#api').rdio('GBRUtfXn_____2R2cHlzNHd5ZXg3Z2M0OXdoaDY3aHdrbnd3dy5rZWVuYW5rYXJpY2guY29tsapYTa8uIvfG_lXhxmxBTQ==');
+          //$('#api').rdio('GAlNi78J_____zlyYWs5ZG02N2pkaHlhcWsyOWJtYjkyN2xvY2FsaG9zdEbwl7EHvbylWSWFWYMZwfc=');
+          // this is a valid playback token for rdio-app.herokuapp.com.
+          $('#api').rdio('GBZVGdR______2R2cHlzNHd5ZXg3Z2M0OXdoaDY3aHdrbnJkaW8tYXBwLmhlcm9rdWFwcC5jb21r-S1cKZRXAOT4cq-0zic5');
           $('#previous').click(function() { $('#api').rdio().previous(); });
           $('#play').click(function() { $('#api').rdio().play(); });
           $('#pause').click(function() { $('#api').rdio().pause(); });
